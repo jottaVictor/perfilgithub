@@ -1,12 +1,23 @@
-# React + Vite
+# Projeto2 - Inovation Class
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Projeto criado para consultar usuários do github, consumindo a api do github
 
-Currently, two official plugins are available:
+### Funcionalidades
+- Buscas de perfil
+- Histórico de buscas com exclusão lógica para não ser perdido o cache
+- Cache com localstorage
+- Utilizar o Context do React para distribuir o estado global de carregamento (loading) em toda a aplicação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Objetivos pessoais com o projeto
 
-## Expanding the ESLint configuration
+- Criar components reutilizáveis
+- Estudar funcionalidades do React
+- Explorar técnicas para otimizar o desempenho nas renderizações do React
+- Usar cache como uma estratégia para melhorar a experiência do usuário (UX)
+- Garantir responsividade para diferentes dispositivos
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Desafios
+
+- Ao tentar precocimente otimizar o desempenho com useCallback, foi dificultoso trabalhar com o array de dependecias.
+Isso me gerou bugs dificeis de rastrear e me fez respensar o uso deles, além de não ter tido diferença notável entre
+o uso e não uso da hook. Agora estou em busca por melhores práticas e casos de uso da hook useCallback.
