@@ -1,0 +1,51 @@
+.search-input{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.search-input input{
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: black;
+    border: solid #DDDDDD 1px;
+    border-radius: 10px;
+    padding-left: 16px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 2;
+    position: relative;
+}
+
+.search-input input::placeholder{
+    color: black;
+}
+
+.search-input button{
+    position: absolute;
+    background-color: #005CFF;
+    border: solid #DDDDDD 1px;
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    right: 0;
+    top: 0px;
+    z-index: 3;
+}
+
+.search-input .content-history{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    z-index: 1;
+}
+
+.search-input input:focus ~ .content-history,
+.search-input .content-history:hover
+{
+    display: block;
+}

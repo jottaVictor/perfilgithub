@@ -1,0 +1,26 @@
+.logo-system{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-system img:first-child{
+    width: auto;
+    height: 58px;
+}
+
+.logo-system img:last-child{
+    width: auto;
+    height: 45px;
+}
+
+.logo-system h1{
+    font-size: 60px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+    color: #FFFFFF;
+}

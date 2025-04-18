@@ -1,0 +1,50 @@
+.card-user{
+    height: 100%;
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.card-user img{
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-left: 32px;
+    margin-right: 32px;
+    border-radius: 50%;
+    border: 2px solid #005CFF;
+    object-fit: cover;
+}
+
+.card-user .informations{
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height: 100%;
+    margin-right: 72px;
+}
+
+.card-user .informations h1{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+    color: #005CFF;
+}
+
+.card-user .informations p{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    color: black;
+}
+
+.card-user .informations p strong{
+    color: rgb(215, 19, 35);
+}
