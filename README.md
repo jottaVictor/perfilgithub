@@ -4,9 +4,9 @@
 
 ### Funcionalidades
 - Buscas de perfil
-- Histórico de buscas com exclusão lógica para não ser perdido o cache
+- Histórico de buscas
 - Cache com localstorage
-- Utilizar o Context do React para distribuir o estado global de carregamento (loading) em toda a aplicação
+- Animação de loading durante as requisições
 
 ### Objetivos pessoais com o projeto
 
