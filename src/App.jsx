@@ -29,7 +29,6 @@ function App() {
         setHistory(prev => {
             const __history = [...prev]
             __history.push(user.login)
-
             setCache(prev => {
                 const __cache = {
                     ...prev,
@@ -59,11 +58,13 @@ function App() {
 
             setHistory([])
             setCache(prev => {
-                return Object.fromEntries(
-                    Object.entries(prev).map(([key, value]) => {
-                        return [key, {...value, orderHistory: undefined}]
-                    })
-                )
+                const __cache = Object.fromEntries(
+                                    Object.entries(prev).map(([key, value]) => {
+                                        return [key, {...value, orderHistory: undefined}]
+                                    }
+                                ))
+                localStorage.setItem('cacheSearch', JSON.stringify(__cache))
+                return __cache
             })
             return
         }
@@ -83,6 +84,8 @@ function App() {
         setCache(prev => { 
             const __cache = {...prev}
             __cache[userData.login.toLowerCase()].orderHistory = history.length
+
+            localStorage.setItem('cacheSearch', JSON.stringify(__cache))
             return __cache
         })
     }
@@ -90,23 +93,24 @@ function App() {
     const onDeleteHistory = (orderHistory) => {
         if (!Number.isFinite(orderHistory)) return
         
-            setHistory(prevHistory => {
+        setHistory(prevHistory => {
             const newHist = [...prevHistory]
             newHist[orderHistory] = undefined
             return newHist
         })
         
         setCache(prevCache => {
-        const key = history[orderHistory]?.toLowerCase()
-        if (!key || !prevCache[key]) return prevCache
-    
-            return {
-                ...prevCache,
-                [key]: {
-                    ...prevCache[key],
-                    orderHistory: undefined
-                }
+            const key = history[orderHistory]?.toLowerCase()
+            if (!key || !prevCache[key]) return prevCache
+            
+            const __cache = {...prevCache}
+            __cache[key] = {
+                ...prevCache[key],
+                orderHistory: undefined
             }
+
+            localStorage.setItem('cacheSearch', JSON.stringify(__cache))
+            return __cache
         })
         
         console.log("indice deletado", orderHistory)
@@ -195,6 +199,7 @@ function App() {
         }
 
         const __history = Object.values(__cache)
+            .filter(user => Number.isFinite(user.orderHistory))
             .sort((a, b) => a.orderHistory - b.orderHistory)
             .map(user => user.login.toLowerCase())
         setHistory(__history)
