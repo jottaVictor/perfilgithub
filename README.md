@@ -21,3 +21,7 @@
 - Ao tentar precocimente otimizar o desempenho com useCallback, foi dificultoso trabalhar com o array de dependecias.
 Isso me gerou bugs dificeis de rastrear e me fez respensar o uso deles, além de não ter tido diferença notável entre
 o uso e não uso da hook. Agora estou em busca por melhores práticas e casos de uso da hook useCallback.
+
+### Planos
+
+- Adicionar um tamanho limite para history
